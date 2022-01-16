@@ -44,7 +44,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", index)
 	mux.HandleFunc("/healthz", healthz)
-	if err := http.ListenAndServe("localhost:8080", mux); err != nil {
+	if err := http.ListenAndServe(":8080", mux); err != nil {
 		log.Fatal("start server failed, %s \n", err.Error())
 	}
 }
